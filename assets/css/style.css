@@ -1,0 +1,34 @@
+h1{
+    text-align: center;
+    color:red;
+}
+p{
+    font-size:22px;
+}
+#current-blank{
+    font-size:22px;
+    letter-spacing: 3px;
+}
+.main{
+    border: 2px solid green;
+}
+.row-even{
+    height:265px;
+    text-align: center;}
+.picBox{
+    background-color:yellow;
+    margin:auto;
+}
+.dirBox{
+    background-color:lightblue;
+}
+.emptyBox{
+    background-color:pink;
+}
+.guessBox{
+    background-color: orange;
+}
+.pic{
+    max-width:150px;
+    /* max-height:auto; */
+}

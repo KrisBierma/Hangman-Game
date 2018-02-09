@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>Hangman Game</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <h1>Hangman -- Colors Edition</h1>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6 main">
+                <!--main square with info-->
+                <div class="row row-even"> <!--yellow-->
+                    <div class="col-md-6 picBox">
+                        <img src="assets/images/questionMark.jpg" class="pic">
+                        <!--pic-->
+                    </div>
+                    <div class="col-md-6 dirBox"> <!--blue-->
+                        <p>Press any key to get started!</p>
+                        <p id="winCount">Wins </p>
+                        <p>Current Word</p>
+                        <p id="current-blank"></p>
+                    </div>
+                </div>
+                <div class="row row-even">
+                    <div class="col-md-6 emptyBox"></div>
+                    <!--blank-->
+                    <div class="col-md-6 guessBox"><!--orange-->
+                        <p>Number of guesses remaining</p>
+                        <p></p>
+                        <p>Letters already guessed</p>
+                        <p id="letters-guessed"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/javascript/game.js">
+    </script>
+</body>
+
+</html>

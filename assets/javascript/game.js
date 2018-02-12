@@ -1,47 +1,55 @@
     //how to not use the same word until all words have been used once?
     var words = ["blue", "yellow", "orange", "silver", "bronze", "periwinkle", "mahogony", "taupe", "alabaster", "aquamarine"];
-    
-    var images = [];
-    images[0] = "../images/blue.jpg";
-    images[1] = "../images/yellow.jpg";
-    
     var wins = 0;
-    //document.getElementById("num-guesses").innerHTML = numGuesses;
-
+    var images = [];
+    images[0] = "./assets/images/blue.jpg";
+    images[1] = "./assets/images/yellow.jpg";
+    images[2] = "./assets/images/orange.jpg";
+    images[3] = "./assets/images/silver.jpg";
+    images[4] = "./assets/images/bronze.jpg";
+    images[5] = "./assets/images/periwinkle.jpg";
+    images[6] = "./assets/images/mahogony.jpg";
+    images[7] = "./assets/images/taupe.jpg";
+    images[8] = "./assets/images/alabaster.jpg";
+    images[9] = "./assets/images/aquamarine.jpg";
+    
     startGame();
 
 //get a letter; start the game
 function startGame(){
     var lettersGuessed = [];
     var numGuesses = 15;
-    document.getElementById("num-guesses").innerHTML = numGuesses;
+    document.getElementById("num-guesses").innerText = numGuesses;
     var currentWord = words[Math.floor(Math.random() * words.length)];
+    console.log(currentWord);
+    console.log(words.indexOf(currentWord));
     var currentBlank = []; //starts the number of _ at 0
     var wordToArray = currentWord.split(""); //splits the current word into an array, with one letter per space
     console.log(wordToArray); //delete later -- shows current word as an array, one letter per space
-    var gameOver = currentWord.length; //starts the letter count = to current word length
+    var gameWin = currentWord.length; //starts the letter count = to current word length
+    console.log(gameWin);
     for (i = 0; i<currentWord.length; i++){ 
         currentBlank.push(" _ ");
     }
     console.log(currentBlank);//shows spaces on the screen
-    document.getElementById("current-blank").innerHTML = currentBlank.join(" ");
+    document.getElementById("current-blank").innerText = currentBlank.join(" ");
 
     //starts a new word
     document.onkeyup = function (playGame){
         var letter = 0;
         var badLetters;
-        var wordWin = currentWord;
+        //var wordWin = currentWord; //don't think I need another var here; used to change the pink box
 
-        //compare the key to each letter in the current word
+        //compares the key to each letter in the current word
         for(var j = 0; j<currentWord.length; j++){
             if (playGame.key.toLowerCase() === wordToArray[j]){
                 currentBlank[j] = wordToArray[j];
-                document.getElementById("current-blank").innerHTML = currentBlank.join(" ");
+                document.getElementById("current-blank").innerText = currentBlank.join(" ");
                 console.log(currentBlank.join(" "));
                 letter++; 
-                console.log(letter);
-                gameOver--;
-                console.log(gameOver);
+                //console.log(letter);
+                gameWin--;
+                console.log(gameWin);
             }
         }
 
@@ -55,25 +63,27 @@ function startGame(){
             alreadyGuessed();
             if (badLetters === -1) {
                 lettersGuessed.push(playGame.key);
-                document.getElementById("letters-guessed").innerHTML = lettersGuessed;
+                document.getElementById("letters-guessed").innerText = lettersGuessed.join(" ");
                 numGuesses--;
-                document.getElementById("num-guesses").innerHTML = numGuesses;
+                document.getElementById("num-guesses").innerText = numGuesses;
             }
         }
 
         //checks to see when there are no more letters to find in the current word to end the game
-        if (gameOver===0){
+        if (gameWin===0){
             stopGame();
+            console.log("if game over =0");
         }
 
         //what happens when the game ends with a win
         function stopGame(){
-            empty();
-            document.getElementById("word-win").innerHTML = "Yes! The word was " + wordWin + ".";
+            console.log("function stopGame");
+            displayPic();
+            emptyLettersGuessed();
+            document.getElementById("word-win").innerText = "Yes! The word was " + currentWord + ".";
             wins++;
-            document.getElementById("win-count").innerHTML = wins;
+            document.getElementById("win-count").innerText = wins;
             startGame();
-            //displayPic();
         }
 
         //checks to see when the num of guessed = 0 to end the game
@@ -83,34 +93,25 @@ function startGame(){
 
         //what happens when the game ends with a loss
         function loseGame(){
-            empty();
-            document.getElementById("word-win").innerHTML = "The word was " + wordWin + ".";
+            displayPic();
+            emptyLettersGuessed();
+            document.getElementById("word-win").innerText = "The word was " + currentWord + ".";
             startGame();
-            //displayPic();
         }
 
         //function to empty alreadyGuessed letters array
-        function empty(){
+        function emptyLettersGuessed(){
             lettersGuessed = [];
             console.log(lettersGuessed);
-            document.getElementById("letters-guessed").innerHTMl = lettersGuessed.join(" ");
+            document.getElementById("letters-guessed").innerText = "";
+
         }
 
-   //     function displayPic(){
-     //       document.imagePic.src = images[imgNum];
-       //     if ()
-        //}
-
-
+        function displayPic(){
+            document.imagePic.src = images[words.indexOf(currentWord)];
+        }
 
     }//end of function "playGame" to play a new word
 }//end of function startGame
 
-
-//if all letters guess before number of guesses is 0
-//display picture
 //play music
-
-//if letters not guessed before number of guess is 0
-//display picture
-

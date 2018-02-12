@@ -45,8 +45,9 @@ function startGame(){
 document.onkeyup = function (playGame){
 
     var letter = 0;
+    var badLetters;
   
-    //check the key to each letter in the current word
+    //compare the key to each letter in the current word
     for(var j = 0; j<currentWord.length; j++){
         if (playGame.key.toLowerCase() === wordToArray[j]){
             currentBlank[j] = wordToArray[j];
@@ -59,11 +60,20 @@ document.onkeyup = function (playGame){
         }
     }
 
+    //check if the letter is already in the "already guessed" array. if not, add it
+    function alreadyGuessed() {
+        badLetters = lettersGuessed.indexOf(playGame.key);
+        console.log(badLetters);
+    }
+
     if (letter===0){
-        lettersGuessed.push(playGame.key);
-        document.getElementById("letters-guessed").innerHTML = lettersGuessed.join(" ");
-        numGuesses--;
-        document.getElementById("num-guesses").innerHTML = numGuesses;
+        alreadyGuessed();
+        if (badLetters === -1) {
+            lettersGuessed.push(playGame.key);
+            document.getElementById("letters-guessed").innerHTML = lettersGuessed.join(" ");
+            numGuesses--;
+            document.getElementById("num-guesses").innerHTML = numGuesses;
+        }
     }
 
     //checks to see when there are no more letters to find in the current word to end the game
@@ -73,7 +83,9 @@ document.onkeyup = function (playGame){
 
     //what happens when the game ends
     function stopGame(){
-        alert("Game Over");
+        var wordWin = currentWord;
+        document.getElementById("word-win").innerHTML = "Yes! The word was " + wordWin + ".";
+        //prompt("You won! Do you want to play another round?");
         wins++;
         document.getElementById("win-count").innerHTML = wins;
         startGame();

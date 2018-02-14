@@ -13,17 +13,18 @@
 
 <body>
     <div class="container whole">
-        <div class="row justify-content-center">
-            <h1>Hangman -- Colors Edition</h1>
+        <div class="row justify-content-center title">
+            <h1>Hangman</h1>
+            <h2>Colors</h2>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-6 main">
+            <div class="col-md-7 col-sm-12 main">
                 <!--main square with info-->
                 <div class="row row-even"> <!--white-->
                     <div class="col-md-6 picBox justify-content-center">
-                        <img src="assets/images/questionMark.jpg" class="pic">
+                        <img src="assets/images/88090-200.png" class="pic">
                     </div>
-                    <div class="col-md-6 dirBox"> <!--blue-->
+                    <div class="col-md-6 col-sm-12 dirBox"> <!--blue-->
                         <p class="press-key">Press any key to get started!</p>
                         <p>Wins: <span id="win-count"></span></p>
                         <br>
@@ -32,11 +33,11 @@
                     </div>
                 </div>
                 <div class="row row-even">
-                    <div class="col-md-6 wordBox"><!--pink-->
+                    <div class="col-md-6 col-sm-12 wordBox"><!--pink-->
                         <img name="imagePic" width="200px" height=auto id="wordPic">
                         <p id="word-win"><span></span></p>
                     </div>
-                    <div class="col-md-6 guessBox"><!--orange-->
+                    <div class="col-md-6 col-sm-12 guessBox"><!--orange-->
                         <p>Number of guesses remaining: <span id="num-guesses"></span></p>
                         <br>
                         <p>Letters already guessed:</p>

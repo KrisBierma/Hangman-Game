@@ -2,7 +2,7 @@
 
 
 A classic Hangman Game using JavaScript
- and color words only. It counts wins, counts down guesses until a lose, displays the mystery word in spaces, fills in the correctly guessed letters, and displays a picture when finished. It doesn't display an actual man being hung. 
+ and color words only. It counts wins, counts down guesses until a lose, displays the mystery word in spaces, fills in the correctly guessed letters, and displays a picture when finished. It doesn't show an actual man being hung because that's kind of gross. 
 
 ## Instructions
 

@@ -1,5 +1,4 @@
 h1{
-    /* text-align: center; */
     color:#fb3104;
     background-color:#a1dcdd;
     padding:0px 10px 10px 10px;
@@ -8,19 +7,18 @@ h1{
     text-shadow: 5px 2px black;
     display:inline-block;
     line-height: 100px;
-    /* z-index:0; */
+    margin-top:5px;
 }
 h2{
     position: absolute;
     z-index:1;
-    color:purple;
-    text-shadow: 2px 0px white;
+    color:#fbad04;
+    text-shadow: 3px 1px black;
     font-size:65px;
     -ms-transform: rotate(-14deg); 
     -webkit-transform: rotate(-14deg); 
     transform: rotate(-14deg);
     top: 69px;
-    /* text-align: center; */
     right:150px;
     font-weight: bold;
 }
@@ -29,7 +27,6 @@ p{
     color:white;
 }
 .title{
-    /* display:block; */
     text-align: center;
     position: relative;
 }
@@ -41,7 +38,6 @@ p{
 .main{
     border: 5px solid #26733b;
     margin-bottom:100px;
-    /* clear:both; */
 }
 .row-even{
     height:275px;
@@ -59,7 +55,6 @@ p{
 .wordBox{
     background-color:#752443;
     padding-top:20px;
-    /* display:flex; */
 }
 .guessBox{
     background-color:#FB3B12;
@@ -71,7 +66,6 @@ p{
 }
 #word-win{
     margin-top:15px;
-    /* display:block; */
 }
 .whole{
     background-image: url("Color-Swirl-Background.jpg");

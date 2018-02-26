@@ -93,6 +93,7 @@ function startGame(){
         if (numGuesses===0){
             stopMusic();
             displayPic();
+            document.getElementById("song-title").innerText = "";
             emptyLettersGuessed();
             document.getElementById("word-win").innerText = "The word was " + currentWord + ".";
             losses++;
